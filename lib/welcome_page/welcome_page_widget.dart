@@ -110,20 +110,15 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: FFButtonWidget(
-                              onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => AdminPageWidget(),
-                                  ),
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: 'Партнер',
                               options: FFButtonOptions(
                                 width: 230,
                                 height: 70,
                                 color:
-                                    FlutterFlowTheme.of(context).primaryColor,
+                                    FlutterFlowTheme.of(context).secondaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
@@ -142,20 +137,15 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: FFButtonWidget(
-                              onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => AdminPageWidget(),
-                                  ),
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: 'Клиент',
                               options: FFButtonOptions(
                                 width: 230,
                                 height: 70,
                                 color:
-                                    FlutterFlowTheme.of(context).primaryColor,
+                                    FlutterFlowTheme.of(context).secondaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(

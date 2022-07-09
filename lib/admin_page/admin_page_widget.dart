@@ -113,7 +113,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                             options: FFButtonOptions(
                               width: 150,
                               height: 50,
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              color:
+                                  FlutterFlowTheme.of(context).secondaryColor,
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
@@ -170,7 +171,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                             options: FFButtonOptions(
                               width: 150,
                               height: 50,
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              color:
+                                  FlutterFlowTheme.of(context).secondaryColor,
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(

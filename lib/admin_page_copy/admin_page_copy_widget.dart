@@ -46,7 +46,7 @@ class _AdminPageCopyWidgetState extends State<AdminPageCopyWidget> {
           },
         ),
         title: Text(
-          'Администратор',
+          'Чеки клиентов',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Roboto',
                 color: Colors.white,
@@ -233,6 +233,9 @@ class _AdminPageCopyWidgetState extends State<AdminPageCopyWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
                                                                 ),
                                                           ),
                                                         ),
@@ -258,27 +261,91 @@ class _AdminPageCopyWidgetState extends State<AdminPageCopyWidget> {
                                                               BorderRadius
                                                                   .circular(10),
                                                         ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(8,
-                                                                      8, 8, 0),
-                                                          child: Text(
-                                                            getJsonField(
-                                                              checksItem,
-                                                              r'''$..card_type''',
-                                                            ).toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8,
+                                                                          8,
+                                                                          8,
+                                                                          0),
+                                                              child: Text(
+                                                                getJsonField(
+                                                                  checksItem,
+                                                                  r'''$..card_type''',
+                                                                ).toString(),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Roboto',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8,
+                                                                          8,
+                                                                          8,
+                                                                          0),
+                                                              child: Text(
+                                                                'MCC: ${getJsonField(
+                                                                  checksItem,
+                                                                  r'''$..mcc''',
+                                                                ).toString()}',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Roboto',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8,
+                                                                          8,
+                                                                          8,
+                                                                          0),
+                                                              child: Text(
+                                                                'Сумма интерчейнджа:${getJsonField(
+                                                                  checksItem,
+                                                                  r'''$..interchange_sum''',
+                                                                ).toString()}'
+                                                                    .maybeHandleOverflow(
+                                                                  maxChars: 27,
+                                                                  replacement:
+                                                                      '…',
                                                                 ),
-                                                          ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Roboto',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
@@ -294,7 +361,7 @@ class _AdminPageCopyWidgetState extends State<AdminPageCopyWidget> {
                                                                     (rowCheckProductsResponse
                                                                             ?.jsonBody ??
                                                                         ''),
-                                                                    r'''$.result[*]''',
+                                                                    r'''$.result''',
                                                                   )?.toList() ??
                                                                   [];
                                                           return Column(
