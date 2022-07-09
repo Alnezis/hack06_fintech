@@ -188,64 +188,76 @@ class _AdminPageCopyWidgetState extends State<AdminPageCopyWidget> {
                                                 child: ExpandableNotifier(
                                                   initialExpanded: false,
                                                   child: ExpandablePanel(
-                                                    header: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
-                                                          child: Text(
-                                                            getJsonField(
-                                                              checksItem,
-                                                              r'''$..merchant_name''',
-                                                            ).toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .title1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                ),
+                                                    header: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  2, 0, 0, 0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        0),
+                                                            child: Text(
+                                                              getJsonField(
+                                                                checksItem,
+                                                                r'''$..merchant_name''',
+                                                              ).toString(),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .title1
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
-                                                          child: Text(
-                                                            getJsonField(
-                                                              checksItem,
-                                                              r'''$..sum''',
-                                                            ).toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .title1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        0),
+                                                            child: Text(
+                                                              getJsonField(
+                                                                checksItem,
+                                                                r'''$..sum''',
+                                                              ).toString(),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .title1
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                     collapsed: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5, 0, 5, 0),
+                                                                  5, 0, 5, 5),
                                                       child: Container(
                                                         width: MediaQuery.of(
                                                                 context)
@@ -324,12 +336,12 @@ class _AdminPageCopyWidgetState extends State<AdminPageCopyWidget> {
                                                                           8,
                                                                           0),
                                                               child: Text(
-                                                                'Сумма интерчейнджа:${getJsonField(
+                                                                'Сумма интерчейнджа: ${getJsonField(
                                                                   checksItem,
                                                                   r'''$..interchange_sum''',
                                                                 ).toString()}'
                                                                     .maybeHandleOverflow(
-                                                                  maxChars: 27,
+                                                                  maxChars: 25,
                                                                   replacement:
                                                                       '…',
                                                                 ),

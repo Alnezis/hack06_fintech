@@ -1,4 +1,5 @@
 import '../admin_page/admin_page_widget.dart';
+import '../client_main_page/client_main_page_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -137,15 +138,21 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        ClientMainPageWidget(),
+                                  ),
+                                );
                               },
                               text: 'Клиент',
                               options: FFButtonOptions(
                                 width: 230,
                                 height: 70,
                                 color:
-                                    FlutterFlowTheme.of(context).secondaryColor,
+                                    FlutterFlowTheme.of(context).primaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
