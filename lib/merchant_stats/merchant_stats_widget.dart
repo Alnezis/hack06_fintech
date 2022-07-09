@@ -273,7 +273,7 @@ class _MerchantStatsWidgetState extends State<MerchantStatsWidget>
                                   height: 140,
                                   decoration: BoxDecoration(
                                     color:
-                                        FlutterFlowTheme.of(context).middleBlue,
+                                        FlutterFlowTheme.of(context).middleBlue = Color as Color,
                                     boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4,
