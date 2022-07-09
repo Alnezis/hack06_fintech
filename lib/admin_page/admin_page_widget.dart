@@ -1,4 +1,5 @@
 import '../admin_anal/admin_anal_widget.dart';
+import '../admin_page_copy/admin_page_copy_widget.dart';
 import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -131,8 +132,13 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AdminPageCopyWidget(),
+                                ),
+                              );
                             },
                             text: 'Клиенты',
                             options: FFButtonOptions(
