@@ -1,13 +1,12 @@
-import '../admin_page/admin_page_widget.dart';
 import '../client_main_page/client_main_page_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main_admin2/main_admin2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePageWidget extends StatefulWidget {
   const WelcomePageWidget({Key key}) : super(key: key);
@@ -23,52 +22,31 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: Color(0xFFF7F7F7),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
-                child: FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 60,
-                  icon: FaIcon(
-                    FontAwesomeIcons.adjust,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 30,
-                  ),
-                  onPressed: () async {
-                    if (FFAppState().darkTheme) {
-                      setState(() => FFAppState().darkTheme = false);
-                    } else {
-                      setState(() => FFAppState().darkTheme = true);
-                    }
-
-                    setDarkModeSetting(
-                      context,
-                      (FFAppState().darkTheme)
-                          ? ThemeMode.dark
-                          : ThemeMode.light,
-                    );
-                  },
-                ),
+              Lottie.network(
+                'https://assets5.lottiefiles.com/packages/lf20_m2xcns6v.json',
+                width: 250,
+                height: 200,
+                fit: BoxFit.cover,
+                animate: true,
               ),
               Align(
                 alignment: AlignmentDirectional(0, 0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
                         'Войти как:',
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Roboto',
+                              fontFamily: 'Rubik',
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 18,
                             ),
@@ -83,7 +61,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => AdminPageWidget(),
+                                    builder: (context) => MainAdmin2Widget(),
                                   ),
                                 );
                               },
@@ -118,13 +96,12 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                               options: FFButtonOptions(
                                 width: 230,
                                 height: 70,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryColor,
+                                color: Color(0x9D9F9999),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
                                       fontFamily: 'Roboto',
-                                      color: Colors.white,
+                                      color: Color(0xFF95A1AC),
                                       fontSize: 20,
                                     ),
                                 borderSide: BorderSide(
