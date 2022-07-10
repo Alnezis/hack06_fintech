@@ -2,6 +2,7 @@ import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../main_admin2/main_admin2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -52,7 +53,12 @@ class _AdminAnalyticsWidgetState extends State<AdminAnalyticsWidget> {
                 size: 30,
               ),
               onPressed: () async {
-                Navigator.pop(context);
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainAdmin2Widget(),
+                  ),
+                );
               },
             ),
             title: Text(

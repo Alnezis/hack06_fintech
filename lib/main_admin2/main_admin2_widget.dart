@@ -1,4 +1,6 @@
+import '../admin_all_merchants/admin_all_merchants_widget.dart';
 import '../admin_analytics/admin_analytics_widget.dart';
+import '../admin_user_checks/admin_user_checks_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -8,7 +10,6 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
 class MainAdmin2Widget extends StatefulWidget {
   const MainAdmin2Widget({Key key}) : super(key: key);
@@ -84,7 +85,7 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                           padding: EdgeInsetsDirectional.fromSTEB(4, 2, 2, 12),
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.44,
-                            height: 250,
+                            height: 190,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).white,
                               boxShadow: [
@@ -122,84 +123,232 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                                     ),
                                   ),
                                   Expanded(
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 2, 0, 0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 4, 0),
+                                            child: Container(
+                                              width: 16,
+                                              height: 90,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 4, 0),
+                                            child: Container(
+                                              width: 16,
+                                              height: 60,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 4, 0),
+                                            child: Container(
+                                              width: 16,
+                                              height: 110,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 4, 0),
+                                            child: Container(
+                                              width: 16,
+                                              height: 60,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 16,
+                                            height: 90,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF8A47A1),
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 12),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.44,
+                            height: 240,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).white,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 4,
+                                  color: Color(0x34090F13),
+                                  offset: Offset(0, 2),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        AdminAllMerchantsWidget(),
+                                  ),
+                                );
+                              },
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12, 5, 0, 0),
+                                    child: Text(
+                                      'Рекомендации \nдля партнеров',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10, 0, 0, 0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.end,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 4, 0),
-                                          child: Container(
-                                            width: 16,
-                                            height: 90,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
+                                                  0, 0, 8, 10),
+                                          child: Lottie.network(
+                                            'https://assets10.lottiefiles.com/packages/lf20_cyxxejlf.json',
+                                            width: 180,
+                                            height: 100,
+                                            fit: BoxFit.cover,
+                                            animate: true,
                                           ),
                                         ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 12),
+                          child: InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AdminUserChecksWidget(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.44,
+                              height: 240,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 4,
+                                    color: Color(0x34090F13),
+                                    offset: Offset(0, 2),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12, 5, 0, 0),
+                                    child: Text(
+                                      'Клиенты \nи транзакции',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10, 0, 0, 0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 4, 0),
-                                          child: Container(
-                                            width: 16,
-                                            height: 60,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 4, 0),
-                                          child: Container(
-                                            width: 16,
-                                            height: 110,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 4, 0),
-                                          child: Container(
-                                            width: 16,
-                                            height: 60,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 16,
-                                          height: 90,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFF8A47A1),
-                                            borderRadius:
-                                                BorderRadius.circular(12),
+                                                  0, 0, 8, 10),
+                                          child: Lottie.network(
+                                            'https://assets9.lottiefiles.com/packages/lf20_kpDkDy/data.json',
+                                            width: 180,
+                                            height: 100,
+                                            fit: BoxFit.cover,
+                                            animate: true,
                                           ),
                                         ),
                                       ],
@@ -263,158 +412,6 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                                     ),
                                   ],
                                 ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 12),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.44,
-                            height: 190,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).white,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: Color(0x34090F13),
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Клиенты\nи транзакции',
-                                    style:
-                                        FlutterFlowTheme.of(context).subtitle1,
-                                  ),
-                                  Lottie.network(
-                                    'https://assets9.lottiefiles.com/packages/lf20_kpDkDy/data.json',
-                                    width: 200,
-                                    height: 125,
-                                    fit: BoxFit.cover,
-                                    animate: true,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 12),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.44,
-                            height: 250,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).white,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: Color(0x34090F13),
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 0),
-                                    child: Text(
-                                      'Рекомендации',
-                                      style: FlutterFlowTheme.of(context)
-                                          .subtitle1,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
-                                    child: Text(
-                                      'для партнеров',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText2,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 20, 0, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.end,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
-                                            child: Text(
-                                              'Рассмотрено',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText2,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
-                                            child: Text(
-                                              '4/10',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText2,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 8, 0, 0),
-                                      child: LinearPercentIndicator(
-                                        percent: 0.4,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.38,
-                                        lineHeight: 8,
-                                        animation: true,
-                                        progressColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryColor,
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .lineColor,
-                                        barRadius: Radius.circular(8),
-                                        padding: EdgeInsets.zero,
-                                      ),
-                                    ),
-                                  ),
-                                ],
                               ),
                             ),
                           ),

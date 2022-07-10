@@ -52,3 +52,86 @@ class GETChecksCall {
     );
   }
 }
+
+class MerchantAllCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'MerchantAll',
+      apiUrl: 'https://alnezis.riznex.ru:1337/statistic/summaryMerchantAll',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+    );
+  }
+}
+
+class SummaryByMerchantCall {
+  static Future<ApiCallResponse> call({
+    String merchantName = 'Магнит',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'summaryByMerchant',
+      apiUrl: 'https://alnezis.riznex.ru:1337/statistic/summaryByMerchant',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'merchant_name': merchantName,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class SummaryUserInMerchantByNameCall {
+  static Future<ApiCallResponse> call({
+    String userId = '0',
+    String merchantName = '0',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'summaryUserInMerchantByName',
+      apiUrl: 'https://alnezis.riznex.ru:1337/user/summaryUserInMerchantByName',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'user_id': userId,
+        'merchant_name': merchantName,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class SummaryUserInMerchantAllSumCall {
+  static Future<ApiCallResponse> call({
+    String userId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'summaryUserInMerchantAllSum',
+      apiUrl: 'https://alnezis.riznex.ru:1337/user/summaryUserInMerchantAllSum',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'user_id': userId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class SummaryUserInMerchantAlluseridCall {
+  static Future<ApiCallResponse> call({
+    String userId = '0',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'SummaryUserInMerchantAlluserid',
+      apiUrl: 'https://alnezis.riznex.ru:1337/user/summaryUserInMerchantAll',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'user_id': userId,
+      },
+      returnBody: true,
+    );
+  }
+}

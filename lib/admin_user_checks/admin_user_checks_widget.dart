@@ -2,6 +2,8 @@ import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../main_admin2/main_admin2_widget.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -42,7 +44,12 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
             size: 30,
           ),
           onPressed: () async {
-            Navigator.pop(context);
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainAdmin2Widget(),
+              ),
+            );
           },
         ),
         title: Text(
@@ -91,10 +98,14 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(4, 6, 4, 0),
                       child: TextFormField(
                         controller: textController,
-                        autofocus: true,
+                        onChanged: (_) => EasyDebounce.debounce(
+                          'textController',
+                          Duration(milliseconds: 2000),
+                          () => setState(() {}),
+                        ),
                         obscureText: false,
                         decoration: InputDecoration(
-                          hintText: 'id пользователя...',
+                          hintText: 'id пользователя...(от 0 до 3000)',
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).primaryColor,
@@ -120,6 +131,7 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                               fontFamily: 'Rubik',
                               color: FlutterFlowTheme.of(context).primaryText,
                             ),
+                        keyboardType: TextInputType.number,
                       ),
                     ),
                     Align(
@@ -248,10 +260,10 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                                                                             0,
                                                                             0),
                                                                 child: Text(
-                                                                  getJsonField(
+                                                                  '${getJsonField(
                                                                     checksItem,
                                                                     r'''$..sum''',
-                                                                  ).toString(),
+                                                                  ).toString()}₽',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .title1
@@ -279,7 +291,7 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                                                                         context)
                                                                     .size
                                                                     .width,
-                                                            height: 50,
+                                                            height: 70,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
@@ -295,57 +307,89 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                                                                   MainAxisSize
                                                                       .max,
                                                               children: [
-                                                                Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              8,
-                                                                              8,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        'MCC: ${getJsonField(
-                                                                          checksItem,
-                                                                          r'''$..mcc''',
-                                                                        ).toString()}',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Rubik',
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                            ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          2,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .start,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            8,
+                                                                            8,
+                                                                            8,
+                                                                            0),
+                                                                        child:
+                                                                            Text(
+                                                                          'MCC: ${getJsonField(
+                                                                            checksItem,
+                                                                            r'''$..mcc''',
+                                                                          ).toString()}',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyText1
+                                                                              .override(
+                                                                                fontFamily: 'Rubik',
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              ),
+                                                                        ),
                                                                       ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              2,
-                                                                              8,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        getJsonField(
-                                                                          checksItem,
-                                                                          r'''$..card_type''',
-                                                                        ).toString(),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Rubik',
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                            ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            8,
+                                                                            2,
+                                                                            8,
+                                                                            0),
+                                                                        child:
+                                                                            Text(
+                                                                          getJsonField(
+                                                                            checksItem,
+                                                                            r'''$..mcc_name''',
+                                                                          ).toString().maybeHandleOverflow(
+                                                                                maxChars: 12,
+                                                                                replacement: '…',
+                                                                              ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyText1
+                                                                              .override(
+                                                                                fontFamily: 'Rubik',
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              ),
+                                                                        ),
                                                                       ),
-                                                                    ),
-                                                                  ],
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            8,
+                                                                            0,
+                                                                            8,
+                                                                            0),
+                                                                        child:
+                                                                            Text(
+                                                                          getJsonField(
+                                                                            checksItem,
+                                                                            r'''$..card_type''',
+                                                                          ).toString(),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyText1
+                                                                              .override(
+                                                                                fontFamily: 'Rubik',
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
                                                                 ),
                                                                 Expanded(
                                                                   child: Column(
@@ -432,7 +476,12 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                                                                           getJsonField(
                                                                             productsItem,
                                                                             r'''$..product_name''',
-                                                                          ).toString(),
+                                                                          ).toString().maybeHandleOverflow(
+                                                                                maxChars: 25,
+                                                                                replacement: '…',
+                                                                              ),
+                                                                          textAlign:
+                                                                              TextAlign.start,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyText1
                                                                               .override(
@@ -442,10 +491,10 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                                                                         ),
                                                                       ),
                                                                       Text(
-                                                                        getJsonField(
+                                                                        '${getJsonField(
                                                                           productsItem,
                                                                           r'''$..product_cost''',
-                                                                        ).toString(),
+                                                                        ).toString()}₽',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyText1
                                                                             .override(
