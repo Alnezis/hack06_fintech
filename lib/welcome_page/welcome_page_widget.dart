@@ -58,11 +58,12 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await Navigator.push(
+                                await Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => MainAdmin2Widget(),
                                   ),
+                                  (r) => false,
                                 );
                               },
                               text: 'Администратор',

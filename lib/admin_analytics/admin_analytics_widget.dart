@@ -366,7 +366,295 @@ class _AdminAnalyticsWidgetState extends State<AdminAnalyticsWidget> {
                                     ],
                                   ),
                                 ),
-                                Container(),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 25, 0, 0),
+                                  child: FutureBuilder<ApiCallResponse>(
+                                    future: MerchantAllCall.call(),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50,
+                                            height: 50,
+                                            child: SpinKitThreeBounce(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
+                                              size: 50,
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      final columnMerchantAllResponse =
+                                          snapshot.data;
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    6, 0, 0, 5),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(5, 0, 50, 0),
+                                                  child: Text(
+                                                    'Партнер',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily: 'Rubik',
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(34, 0, 0, 0),
+                                                  child: Text(
+                                                    'Сумма',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily: 'Rubik',
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(13, 0, 0, 0),
+                                                  child: Text(
+                                                    'Процент',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily: 'Rubik',
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Expanded(
+                                            child: Builder(
+                                              builder: (context) {
+                                                final productResults =
+                                                    getJsonField(
+                                                          (columnMerchantAllResponse
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                          r'''$.result[*]''',
+                                                        )?.toList() ??
+                                                        [];
+                                                return SingleChildScrollView(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: List.generate(
+                                                        productResults.length,
+                                                        (productResultsIndex) {
+                                                      final productResultsItem =
+                                                          productResults[
+                                                              productResultsIndex];
+                                                      return Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(0, 0,
+                                                                    0, 10),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0,
+                                                                          0,
+                                                                          8,
+                                                                          0),
+                                                              child: Container(
+                                                                width: 125,
+                                                                height: 35,
+                                                                decoration:
+                                                                    BoxDecoration(),
+                                                                child: Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0, 0),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Align(
+                                                                          alignment: AlignmentDirectional(
+                                                                              0,
+                                                                              0),
+                                                                          child:
+                                                                              Text(
+                                                                            getJsonField(
+                                                                              productResultsItem,
+                                                                              r'''$..merchant_name''',
+                                                                            ).toString().maybeHandleOverflow(
+                                                                                  maxChars: 10,
+                                                                                  replacement: '…',
+                                                                                ),
+                                                                            textAlign:
+                                                                                TextAlign.start,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Rubik',
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                  fontSize: 15,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8,
+                                                                          0,
+                                                                          8,
+                                                                          0),
+                                                              child:
+                                                                  LinearPercentIndicator(
+                                                                percent: 0.5,
+                                                                width: 100,
+                                                                lineHeight: 20,
+                                                                animation: true,
+                                                                progressColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .middleBlue,
+                                                                backgroundColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryBackground,
+                                                                center: Text(
+                                                                  getJsonField(
+                                                                    productResultsItem,
+                                                                    r'''$..interchange_sum''',
+                                                                  )
+                                                                      .toString()
+                                                                      .maybeHandleOverflow(
+                                                                        maxChars:
+                                                                            10,
+                                                                        replacement:
+                                                                            '…',
+                                                                      ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText1
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Rubik',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            18,
+                                                                      ),
+                                                                ),
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                              ),
+                                                            ),
+                                                            LinearPercentIndicator(
+                                                              percent: 0.5,
+                                                              width: 100,
+                                                              lineHeight: 20,
+                                                              animation: true,
+                                                              progressColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryColor,
+                                                              backgroundColor:
+                                                                  Color(
+                                                                      0xFFEAE1D5),
+                                                              center: Text(
+                                                                getJsonField(
+                                                                  productResultsItem,
+                                                                  r'''$..turnover_product''',
+                                                                )
+                                                                    .toString()
+                                                                    .maybeHandleOverflow(
+                                                                      maxChars:
+                                                                          5,
+                                                                      replacement:
+                                                                          '…',
+                                                                    ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Rubik',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          18,
+                                                                    ),
+                                                              ),
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .zero,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      );
+                                                    }),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                ),
                               ],
                             ),
                           ),

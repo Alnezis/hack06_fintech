@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 
 class MainAdmin2Widget extends StatefulWidget {
   const MainAdmin2Widget({Key key}) : super(key: key);
@@ -255,30 +254,23 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                                           .bodyText1,
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 8, 10),
-                                          child: Lottie.network(
-                                            'https://assets10.lottiefiles.com/packages/lf20_cyxxejlf.json',
-                                            width: 180,
-                                            height: 100,
-                                            fit: BoxFit.fitHeight,
-                                            animate: true,
-                                          ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 10, 0),
+                                        child: Image.asset(
+                                          'assets/images/partner.PNG',
+                                          width: double.infinity,
+                                          height: 120,
+                                          fit: BoxFit.fitWidth,
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
@@ -342,13 +334,12 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 8, 10),
-                                          child: Lottie.network(
-                                            'https://assets9.lottiefiles.com/packages/lf20_kpDkDy/data.json',
-                                            width: 180,
+                                                  10, 0, 10, 0),
+                                          child: Image.asset(
+                                            'assets/images/dsa.PNG',
+                                            width: double.infinity,
                                             height: 100,
-                                            fit: BoxFit.fitHeight,
-                                            animate: true,
+                                            fit: BoxFit.fitWidth,
                                           ),
                                         ),
                                       ],
