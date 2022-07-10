@@ -142,7 +142,7 @@ class _UserUserChecksWidgetState extends State<UserUserChecksWidget> {
                                             (userUserChecksSummaryUserInMerchantAlluseridResponse
                                                     ?.jsonBody ??
                                                 ''),
-                                            r'''$..merchant_name''',
+                                            r'''$.result[*]''',
                                           )?.toList() ??
                                           [];
                                       return SingleChildScrollView(
@@ -168,7 +168,10 @@ class _UserUserChecksWidgetState extends State<UserUserChecksWidget> {
                                                             .fromSTEB(
                                                                 5, 5, 0, 0),
                                                     child: Text(
-                                                      'Hello World',
+                                                      getJsonField(
+                                                        shopsItem,
+                                                        r'''$..merchant_name''',
+                                                      ).toString(),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -181,12 +184,10 @@ class _UserUserChecksWidgetState extends State<UserUserChecksWidget> {
                                                             .fromSTEB(
                                                                 5, 5, 0, 0),
                                                     child: Text(
-                                                      '${valueOrDefault<String>(
-                                                        (userUserChecksSummaryUserInMerchantAlluseridResponse
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                        '\$..checks_sum',
-                                                      )}₽',
+                                                      '${getJsonField(
+                                                        shopsItem,
+                                                        r'''$..checks_sum''',
+                                                      ).toString()}₽',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)

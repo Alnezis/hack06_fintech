@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 
 class ClientMainPageWidget extends StatefulWidget {
   const ClientMainPageWidget({Key key}) : super(key: key);
@@ -218,7 +217,7 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 8, 0, 12),
                                 child: Text(
-                                  '+180₽',
+                                  'XX₽',
                                   textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
                                       .title1
@@ -242,7 +241,7 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      '4.5% ',
+                                      'XX% ',
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
@@ -384,101 +383,97 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                           color: FlutterFlowTheme.of(context).secondaryColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  AutoSizeText(
-                                    'Эксклюзивный кэшбек',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText2
-                                        .override(
-                                          fontFamily: 'Rubik',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                  Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 18,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: InkWell(
-                                      onTap: () async {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Лучшая категория пользователя по частоте и сумме',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                            ),
-                                            duration:
-                                                Duration(milliseconds: 3500),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .bone,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(12, 0, 12, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    AutoSizeText(
+                                      'Эксклюзивный кэшбек',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText2
+                                          .override(
+                                            fontFamily: 'Rubik',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
                                           ),
-                                        );
-                                      },
-                                      child: FaIcon(
-                                        FontAwesomeIcons.infoCircle,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 20,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10, 0, 0, 0),
+                                      child: InkWell(
+                                        onTap: () async {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Лучшая категория пользователя по частоте и сумме',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 3500),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bone,
+                                            ),
+                                          );
+                                        },
+                                        child: FaIcon(
+                                          FontAwesomeIcons.infoCircle,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 20,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/client2.PNG',
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5, 0, 8, 0),
+                                      child: Text(
+                                        '10% на все товары категории \"Фрукты\"',
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Rubik',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              fontSize: 15,
+                                            ),
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Lottie.asset(
-                                  'assets/lottie_animations/personal_cash.json',
-                                  width: 150,
-                                  height: 130,
-                                  fit: BoxFit.fitHeight,
-                                  repeat: false,
-                                  animate: true,
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 8, 0),
-                                    child: Text(
-                                      '10% на все товары категории \"Алкоголь\"',
-                                      style: FlutterFlowTheme.of(context)
-                                          .title1
-                                          .override(
-                                            fontFamily: 'Rubik',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            fontSize: 15,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -523,12 +518,6 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                                                 .primaryText,
                                             fontSize: 18,
                                           ),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 18,
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -642,16 +631,10 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                                               fontFamily: 'Rubik',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .white,
                                               fontSize: 18,
                                             ),
                                       ),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      size: 16,
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -694,8 +677,7 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                                     .title1
                                     .override(
                                       fontFamily: 'Rubik',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                      color: FlutterFlowTheme.of(context).white,
                                       fontSize: 15,
                                     ),
                               ),
@@ -714,7 +696,7 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                                           .override(
                                             fontFamily: 'Rubik',
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .white,
                                           ),
                                     ),
                                   ],

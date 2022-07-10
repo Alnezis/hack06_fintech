@@ -1,9 +1,9 @@
 import '../admin_all_merchants/admin_all_merchants_widget.dart';
 import '../admin_analytics/admin_analytics_widget.dart';
-import '../admin_user_checks/admin_user_checks_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../merchant_stats_copy/merchant_stats_copy_widget.dart';
 import '../welcome_page/welcome_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -267,7 +267,7 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                                           'assets/images/partner.PNG',
                                           width: double.infinity,
                                           height: 120,
-                                          fit: BoxFit.fitWidth,
+                                          fit: BoxFit.contain,
                                         ),
                                       ),
                                     ],
@@ -289,7 +289,8 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => AdminUserChecksWidget(),
+                                  builder: (context) =>
+                                      MerchantStatsCopyWidget(),
                                 ),
                               );
                             },
@@ -339,7 +340,7 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                                             'assets/images/dsa.PNG',
                                             width: double.infinity,
                                             height: 100,
-                                            fit: BoxFit.fitWidth,
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
                                       ],
@@ -398,7 +399,7 @@ class _MainAdmin2WidgetState extends State<MainAdmin2Widget> {
                                         FontAwesomeIcons.chartPie,
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryColor,
-                                        size: 80,
+                                        size: 100,
                                       ),
                                     ),
                                   ],

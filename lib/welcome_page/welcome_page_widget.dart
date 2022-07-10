@@ -6,7 +6,6 @@ import '../main_admin2/main_admin2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 
 class WelcomePageWidget extends StatefulWidget {
   const WelcomePageWidget({Key key}) : super(key: key);
@@ -29,12 +28,11 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Lottie.asset(
-                'assets/lottie_animations/chel_menu.json',
-                width: 250,
+              Image.asset(
+                'assets/images/main.PNG',
+                width: 200,
                 height: 200,
-                fit: BoxFit.fitHeight,
-                animate: true,
+                fit: BoxFit.cover,
               ),
               Align(
                 alignment: AlignmentDirectional(0, 0),
