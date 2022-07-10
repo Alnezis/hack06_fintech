@@ -29,11 +29,11 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Lottie.network(
-                'https://assets5.lottiefiles.com/packages/lf20_m2xcns6v.json',
+              Lottie.asset(
+                'assets/lottie_animations/chel_menu.json',
                 width: 250,
                 height: 200,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitHeight,
                 animate: true,
               ),
               Align(
@@ -101,7 +101,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                     .subtitle2
                                     .override(
                                       fontFamily: 'Roboto',
-                                      color: Color(0xFF95A1AC),
+                                      color: FlutterFlowTheme.of(context).white,
                                       fontSize: 20,
                                     ),
                                 borderSide: BorderSide(

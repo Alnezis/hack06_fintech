@@ -70,10 +70,10 @@ class _UserUserChecksWidgetState extends State<UserUserChecksWidget> {
               },
             ),
             title: Text(
-              'Чеки покупателя',
+              'Мои покупки',
               style: FlutterFlowTheme.of(context).title2.override(
                     fontFamily: 'Roboto',
-                    color: FlutterFlowTheme.of(context).primaryText,
+                    color: FlutterFlowTheme.of(context).white,
                     fontSize: 22,
                   ),
             ),
@@ -142,7 +142,7 @@ class _UserUserChecksWidgetState extends State<UserUserChecksWidget> {
                                             (userUserChecksSummaryUserInMerchantAlluseridResponse
                                                     ?.jsonBody ??
                                                 ''),
-                                            r'''$.result[*]''',
+                                            r'''$..merchant_name''',
                                           )?.toList() ??
                                           [];
                                       return SingleChildScrollView(
@@ -168,12 +168,7 @@ class _UserUserChecksWidgetState extends State<UserUserChecksWidget> {
                                                             .fromSTEB(
                                                                 5, 5, 0, 0),
                                                     child: Text(
-                                                      getJsonField(
-                                                        (userUserChecksSummaryUserInMerchantAlluseridResponse
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                        r'''$..merchant_name''',
-                                                      ).toString(),
+                                                      'Hello World',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)

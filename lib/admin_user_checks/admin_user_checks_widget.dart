@@ -56,7 +56,7 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
           'Чеки покупателя',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Roboto',
-                color: FlutterFlowTheme.of(context).primaryText,
+                color: FlutterFlowTheme.of(context).white,
                 fontSize: 22,
               ),
         ),
@@ -95,7 +95,7 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(4, 6, 4, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 6, 16, 0),
                       child: TextFormField(
                         controller: textController,
                         onChanged: (_) => EasyDebounce.debounce(
@@ -152,7 +152,7 @@ class _AdminUserChecksWidgetState extends State<AdminUserChecksWidget> {
                                 final checksItem = checks[checksIndex];
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      25, 0, 25, 0),
+                                      16, 0, 16, 0),
                                   child: FutureBuilder<ApiCallResponse>(
                                     future: CheckProductsCall.call(
                                       userId: valueOrDefault<String>(

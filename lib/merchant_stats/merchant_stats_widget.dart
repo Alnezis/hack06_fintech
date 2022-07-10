@@ -146,10 +146,10 @@ class _MerchantStatsWidgetState extends State<MerchantStatsWidget>
               },
             ),
             title: Text(
-              'Продавец',
+              'Партнер',
               style: FlutterFlowTheme.of(context).title2.override(
                     fontFamily: 'Roboto',
-                    color: FlutterFlowTheme.of(context).primaryText,
+                    color: FlutterFlowTheme.of(context).white,
                     fontSize: 22,
                   ),
             ),
@@ -297,19 +297,23 @@ class _MerchantStatsWidgetState extends State<MerchantStatsWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0, 0, 0, 6),
                                               child: Text(
-                                                'Кешбек по категории \"мясные продукты\"',
+                                                'Кешбек по любимой категории',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText2,
                                               ),
                                             ),
-                                            Text(
-                                              '3%',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .title1,
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 12, 0, 0),
+                                              child: Text(
+                                                '3%',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .title1,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -346,14 +350,16 @@ class _MerchantStatsWidgetState extends State<MerchantStatsWidget>
                                           children: [
                                             Text(
                                               'Подробнее',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText2
-                                                      .override(
-                                                        fontFamily: 'Rubik',
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText2
+                                                  .override(
+                                                    fontFamily: 'Rubik',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .white,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -362,7 +368,13 @@ class _MerchantStatsWidgetState extends State<MerchantStatsWidget>
                                                 'Просмотр данных аналитики',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .title1,
+                                                        .title1
+                                                        .override(
+                                                          fontFamily: 'Rubik',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .white,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -423,7 +435,7 @@ class _MerchantStatsWidgetState extends State<MerchantStatsWidget>
                             children: [
                               Icon(
                                 Icons.payments,
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color: FlutterFlowTheme.of(context).white,
                                 size: 44,
                               ),
                               Padding(
@@ -437,13 +449,24 @@ class _MerchantStatsWidgetState extends State<MerchantStatsWidget>
                                     r'''$..sum''',
                                   ).toString()}₽',
                                   textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).title1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .title1
+                                      .override(
+                                        fontFamily: 'Rubik',
+                                        color:
+                                            FlutterFlowTheme.of(context).white,
+                                      ),
                                 ),
                               ),
                               Text(
                                 'Оборот по картам банка',
                                 textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyText2,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context).white,
+                                    ),
                               ),
                             ],
                           ),

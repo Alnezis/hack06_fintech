@@ -49,7 +49,7 @@ class _AdminAllMerchantsWidgetState extends State<AdminAllMerchantsWidget> {
           'Партнеры',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Roboto',
-                color: FlutterFlowTheme.of(context).primaryText,
+                color: FlutterFlowTheme.of(context).white,
                 fontSize: 22,
               ),
         ),
@@ -100,117 +100,137 @@ class _AdminAllMerchantsWidgetState extends State<AdminAllMerchantsWidget> {
                                 final shopsItem = shops[shopsIndex];
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 12, 20, 0),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 80,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 5,
-                                          color: Color(0x3416202A),
-                                          offset: Offset(0, 2),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(12),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8, 8, 8, 8),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                getJsonField(
-                                                  shopsItem,
-                                                  r'''$..merchant_name''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText2
-                                                        .override(
-                                                          fontFamily: 'Rubik',
-                                                          color:
-                                                              Color(0xFF57636C),
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                              Text(
-                                                'Оборот: ${getJsonField(
-                                                  shopsItem,
-                                                  r'''$..sum''',
-                                                ).toString()}₽',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText2
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color: Color(0xFF57636C),
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
-                                              ),
-                                              Text(
-                                                'Категория: ${getJsonField(
-                                                  shopsItem,
-                                                  r'''$..mcc_name''',
-                                                ).toString()}'
-                                                    .maybeHandleOverflow(
-                                                  maxChars: 27,
-                                                  replacement: '…',
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText2
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color: Color(0xFF57636C),
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
-                                              ),
-                                            ],
+                                      16, 12, 16, 0),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              MerchantStatsWidget(
+                                            merchantName: getJsonField(
+                                              shopsItem,
+                                              r'''$..merchant_name''',
+                                            ).toString(),
                                           ),
-                                          Expanded(
-                                            child: Align(
-                                              alignment:
-                                                  AlignmentDirectional(0.9, 0),
-                                              child: InkWell(
-                                                onTap: () async {
-                                                  await Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          MerchantStatsWidget(
-                                                        merchantName:
-                                                            getJsonField(
-                                                          shopsItem,
-                                                          r'''$..merchant_name''',
-                                                        ).toString(),
+                                        ),
+                                      );
+                                    },
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 80,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 5,
+                                            color: Color(0x3416202A),
+                                            offset: Offset(0, 2),
+                                          )
+                                        ],
+                                        borderRadius: BorderRadius.circular(12),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8, 8, 8, 8),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  getJsonField(
+                                                    shopsItem,
+                                                    r'''$..merchant_name''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText2
+                                                      .override(
+                                                        fontFamily: 'Rubik',
+                                                        color:
+                                                            Color(0xFF57636C),
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
-                                                    ),
-                                                  );
-                                                },
-                                                child: Icon(
-                                                  Icons.arrow_forward_ios,
-                                                  color: Color(0xFF57636C),
-                                                  size: 18,
+                                                ),
+                                                Text(
+                                                  'Оборот: ${getJsonField(
+                                                    shopsItem,
+                                                    r'''$..sum''',
+                                                  ).toString()}₽',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText2
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color:
+                                                            Color(0xFF57636C),
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                                Text(
+                                                  'Категория: ${getJsonField(
+                                                    shopsItem,
+                                                    r'''$..mcc_name''',
+                                                  ).toString()}'
+                                                      .maybeHandleOverflow(
+                                                    maxChars: 27,
+                                                    replacement: '…',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText2
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color:
+                                                            Color(0xFF57636C),
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                            Expanded(
+                                              child: Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.9, 0),
+                                                child: InkWell(
+                                                  onTap: () async {
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            MerchantStatsWidget(
+                                                          merchantName:
+                                                              getJsonField(
+                                                            shopsItem,
+                                                            r'''$..merchant_name''',
+                                                          ).toString(),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: Icon(
+                                                    Icons.arrow_forward_ios,
+                                                    color: Color(0xFF57636C),
+                                                    size: 18,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),

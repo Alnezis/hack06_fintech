@@ -120,7 +120,7 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
               'Личный кабинет',
               style: FlutterFlowTheme.of(context).title2.override(
                     fontFamily: 'Roboto',
-                    color: FlutterFlowTheme.of(context).primaryText,
+                    color: FlutterFlowTheme.of(context).white,
                     fontSize: 22,
                   ),
             ),
@@ -135,7 +135,7 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
               scrollDirection: Axis.vertical,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(4, 6, 4, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 6, 16, 0),
                   child: TextFormField(
                     controller: textController,
                     onChanged: (_) => EasyDebounce.debounce(
@@ -451,11 +451,11 @@ class _ClientMainPageWidgetState extends State<ClientMainPageWidget>
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Lottie.network(
-                                  'https://assets5.lottiefiles.com/packages/lf20_onhidlot.json',
+                                Lottie.asset(
+                                  'assets/lottie_animations/personal_cash.json',
                                   width: 150,
                                   height: 130,
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.fitHeight,
                                   repeat: false,
                                   animate: true,
                                 ),
